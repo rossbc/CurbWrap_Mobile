@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:e="clr-namespace:CurbWrap.Helpers"
+             x:Class="CurbWrap.AppSettings.CreditCard"  Style="{StaticResource appPage}"
+             Title="Payment Settings">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Card Number"   VerticalOptions="Start"/>
+            <e:EntryExt Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Placeholder="..." x:Name="eCardNumber" VerticalOptions="EndAndExpand" 
+                        ReturnKeyType="Next" Keyboard="Numeric"/>
+
+            <Label Grid.Row="2" Grid.Column="1" Text="Exp Month"   VerticalOptions="Start"/>
+            <e:EntryExt Grid.Row="2" Grid.Column="1" Placeholder="..." x:Name="eExpMonth" Focused="EExpMonth_OnFocused"
+                        VerticalOptions="EndAndExpand" ReturnKeyType="Next" />
+
+            <Label Grid.Row="2" Grid.Column="2" Text="Exp Year"   VerticalOptions="Start"/>
+            <e:EntryExt Grid.Row="2" Grid.Column="2" Placeholder="..."  x:Name="eExpYear"  VerticalOptions="EndAndExpand" Focused="EExpYear_OnFocused"
+                        ReturnKeyType="Next"/>
+
+            <Label Grid.Row="2" Grid.Column="3" Text="CSC"   VerticalOptions="Start"/>
+            <e:EntryExt Grid.Row="2" Grid.Column="3" Placeholder="..." x:Name="eCSC"  VerticalOptions="EndAndExpand" 
+                        ReturnKeyType="Next" Keyboard="Numeric" />
+
+
+            <Label Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="Card Address is the same as my shipping address" VerticalOptions="Start" 
+                   x:Name="lBillMessage" HorizontalOptions="Start" />
+            <Switch Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" x:Name="swBilling"  IsToggled="True"    OnColor="{StaticResource Purple}" 
+                    Toggled="BillingSwitchChanged" HorizontalOptions="Start" />
+
+            <StackLayout x:Name="BillingAddress" IsVisible="False" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Address 1"   VerticalOptions="Start"/>
+                    <e:EntryExt Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="..." x:Name="eCardStreet1" 
+                                VerticalOptions="EndAndExpand"  ReturnKeyType="Next"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Address 2"   VerticalOptions="Start"/>
+                    <e:EntryExt Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="..." x:Name="eCardStreet2"  
+                                VerticalOptions="EndAndExpand" ReturnKeyType="Next"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="City"   VerticalOptions="Start"/>
+                    <e:EntryExt Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="..." x:Name="eCardCity" 
+                                VerticalOptions="EndAndExpand" ReturnKeyType="Next"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" Text="State"   VerticalOptions="Start"/>
+                    <e:EntryExt Grid.Row="3" Grid.Column="0" x:Name="eCardState" Placeholder="..."  VerticalOptions="EndAndExpand" 
+                                ReturnKeyType="Next" Focused="onPickerFocus"/>
+
+                    <Label Grid.Row="3" Grid.Column="1" Text="Zip"   VerticalOptions="Start"/>
+                    <e:EntryExt Grid.Row="3" Grid.Column="1" Placeholder="..." x:Name="eCardZip"  VerticalOptions="EndAndExpand"  
+                                ReturnKeyType="Done" />
+                </Grid>
+
+            </StackLayout>
+
+            <Button Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" VerticalOptions="Start" HorizontalOptions="End" Text="Register" x:Name="btnCreditCardRegister" Clicked="BtnCreditCardRegister_OnClicked"  Style="{StaticResource PrimaryButton}" />
+        </Grid>
+    </ScrollView>
+</ContentPage>

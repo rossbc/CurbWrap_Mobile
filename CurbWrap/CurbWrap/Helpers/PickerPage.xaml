@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CurbWrap.Helpers.PickerPage"
+             Style="{StaticResource appPage}">
+    <ListView x:Name="picker" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding .}" TextColor="{StaticResource TextColor}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
+
+
+<!-- 
+     <ListView.ItemTemplate>
+            <DataTemplate >
+                <Label TextColor="Black" Text="{Binding ColorName}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    -->

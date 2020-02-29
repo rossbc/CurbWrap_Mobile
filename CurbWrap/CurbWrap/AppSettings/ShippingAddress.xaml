@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CurbWrap.AppSettings.ShippingAddress"
+             Style="{StaticResource appPage}"
+             Title="Shipping Address">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="1" Grid.Column="1" Text="Ship to customer"   VerticalOptions="Start"/>
+            <Switch Grid.Row="1" Grid.Column="2" x:Name="eShipOption"  OnColor="{StaticResource Purple}"  Toggled="EShipOption_Toggled" HorizontalOptions="StartAndExpand" />
+            <Label Grid.Row="1" Grid.Column="3" Text="Ship to sales rep"   VerticalOptions="Start"/>
+
+            <StackLayout x:Name="repShipToAddress" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Address 1"   VerticalOptions="Start"/>
+                    <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"  Placeholder="..." x:Name="eStreet1" VerticalOptions="End" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Address 2"   VerticalOptions="Start"/>
+                    <Entry Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="..." x:Name="eStreet2" VerticalOptions="End" />
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="City"   VerticalOptions="Start"/>
+                    <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Placeholder="..." x:Name="eCity" VerticalOptions="End" />
+
+                    <Label Grid.Row="3" Grid.Column="0" Text="State"   VerticalOptions="Start"/>
+                    <Entry Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="eState" VerticalOptions="End" Focused="onPickerFocus" />
+
+                    <Label Grid.Row="4" Grid.Column="0" Text="Zip"   VerticalOptions="Start"/>
+                    <Entry Grid.Row="4" Grid.Column="0" Placeholder="..." x:Name="eZip" VerticalOptions="End" />
+                </Grid>
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

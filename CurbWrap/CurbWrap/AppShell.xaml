@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sett="clr-namespace:CurbWrap.AppSettings;assembly=CurbWrap"
+             xmlns:wrap="clr-namespace:CurbWrap;assembly=CurbWrap"
+             xmlns:menu="clr-namespace:CurbWrap.Menu;assembly=CurbWrap"
+             FlyoutHeaderBehavior="CollapseOnScroll"
+             Navigating="OnNavigating"
+             Navigated="OnNavigated"
+             x:Class="CurbWrap.AppShell">
+    <Shell.Resources>
+        <Style x:Key="BaseStyle"
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="{StaticResource Purple}" />
+            <Setter Property="Shell.ForegroundColor" 
+                    Value="{StaticResource ButtonTextColor}" />
+            <Setter Property="Shell.TabBarBackgroundColor"
+                    Value="{StaticResource Purple}" />
+            <Setter Property="Shell.TabBarTitleColor"
+                    Value="{StaticResource ButtonTextColor}" />
+            <Setter Property="Shell.TitleColor" 
+                    Value="{StaticResource ButtonTextColor}" />
+            <Setter Property="Shell.TabBarUnselectedColor"
+                    Value="{StaticResource LightGray}" />
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="{StaticResource Purple}" />
+        </Style>
+        <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+    </Shell.Resources>
+    
+    <Shell.FlyoutHeader>
+        <menu:FlyoutHeader />
+    </Shell.FlyoutHeader>
+
+
+
+    <FlyoutItem x:Name="News" Title="News" Icon="News.png">
+            <ShellContent Route="news" Style="{StaticResource BaseStyle}">
+                <wrap:NewsPage />
+            </ShellContent>
+    </FlyoutItem>
+    <!--
+    <FlyoutItem x:Name="Register" Title="Register" Icon="Profile.png" >
+        <Tab >
+            <ShellContent Route="register" Style="{StaticResource BaseStyle}">
+                <sett:Register />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem x:Name="Catalog" Title="Catalog" Icon="Home.png">
+            <ShellContent Route="home" Style="{StaticResource BaseStyle}">
+                <wrap:HomePage />
+            </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem x:Name="Profile"  Title="Profile" Icon="Profile.png">
+            <ShellContent Route="profile" Style="{StaticResource BaseStyle}">
+                <sett:Profile />
+            </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem x:Name="ShippingAddress"  Title="Shipping Info" Icon="Address.png">
+            <ShellContent Route="shippingAddress" Style="{StaticResource BaseStyle}">
+                <sett:ShippingAddress />
+            </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem x:Name="CreditCard" Title="Billing Info" Icon="CreditCard.png">
+            <ShellContent Route="creditCard" Style="{StaticResource BaseStyle}">
+                <sett:CreditCard />
+            </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem x:Name="About" Title="About" Icon="Info.png" Style="{StaticResource BaseStyle}">
+            <ShellContent Route="about">
+                <wrap:AboutPage />
+            </ShellContent>
+    </FlyoutItem>-->
+
+
+
+</Shell>

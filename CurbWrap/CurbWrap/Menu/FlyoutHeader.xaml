@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:img="clr-namespace:CurbWrap.MarkupExtensions;assembly=CurbWrap"
+             x:Class="CurbWrap.Menu.FlyoutHeader">
+    <Grid BackgroundColor="{StaticResource LightGray}">
+        <Image Aspect="AspectFit" 
+               Source="{img:EmbeddedImage CurbWrap.Images.Applogo.png}" 
+               HeightRequest="150"
+               WidthRequest="150"
+               Opacity="0.4" />
+        <Label Text="CurbWrap" 
+               TextColor="{StaticResource TextColor}" 
+               FontAttributes="Bold" 
+               FontSize="Title"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="End" />
+    </Grid>
+
+</ContentView>

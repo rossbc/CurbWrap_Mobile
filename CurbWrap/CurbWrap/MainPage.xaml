@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CurbWrap"
+             xmlns:img="clr-namespace:CurbWrap.MarkupExtensions;assembly=CurbWrap"
+             x:Class="CurbWrap.MainPage" Style="{StaticResource appPage}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="100" HeightRequest="100">
+            <!-- Place new controls here -->
+            <Image  Source="{img:EmbeddedImage ResourceName=CurbWrap.Images.applog01.png}" />
+        </StackLayout>
+        <StackLayout Grid.Row="2">
+            <!--<Button Text="Register" Style="{StaticResource PrimaryButton}" Clicked="Register_Clicked"/>-->
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

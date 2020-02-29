@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            Style="{StaticResource appPage}"
+             x:Class="CurbWrap.AppSettings.FundraiserPage"
+             Title="Fundraiser">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="1" Grid.Column="1" Text="First Name"  VerticalOptions="Start"/>
+            <Entry Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="..." x:Name="eFirstName" VerticalOptions="EndAndExpand" />
+
+            <Label Grid.Row="2" Grid.Column="1" Text="Last Name"   VerticalOptions="Start"/>
+            <Entry Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="..." x:Name="eLastName"  VerticalOptions="EndAndExpand"/>
+
+            <Label Grid.Row="3" Grid.Column="1" Text="Fundraiser Code"   VerticalOptions="Start"/>
+            <Entry Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Placeholder="..." Keyboard="Email" x:Name="eFundraiserCode"  VerticalOptions="EndAndExpand"/>
+
+            <Label Grid.Row="4" Grid.Column="1" Text="Fundraiser Code"   VerticalOptions="Start"/>
+            <Label Grid.Row="4" Grid.Column="2" x:Name="lFundraiserCode"  VerticalOptions="Start"/>
+
+            <Label Grid.Row="5" Grid.Column="1" Text="Ends On"   VerticalOptions="Start"/>
+            <Label Grid.Row="5" Grid.Column="2" x:Name="lExpiresOn"   VerticalOptions="Start"/>
+
+            <Button Grid.Row="6" Grid.Column="2" HorizontalOptions="End" VerticalOptions="Start" Text="Start Fundraising!" x:Name="btnStart" Clicked="BtnStart_Clicked"  Style="{StaticResource PrimaryButton}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

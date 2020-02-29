@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:markupExtensions="clr-namespace:CurbWrap.MarkupExtensions;assembly=CurbWrap"
+             x:Class="CurbWrap.Catalog.GalleryCell">
+        <Frame CornerRadius="20" Padding="0" MinimumWidthRequest="270" MinimumHeightRequest="83"
+               x:Name="ViewButton" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+               BackgroundColor="{StaticResource DarkGray}">
+            <RelativeLayout Padding="10" >
+                    <!--Left,Top,Width,Height-->
+                    <ImageButton x:Name="btnCategory"
+                                 WidthRequest="450"  Aspect="AspectFit"
+                                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=10, Factor=0}"
+                                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=10, Factor=0 }"
+                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-20}"
+                                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Constant=-40}"
+                                 Source="White.png"
+                                 BackgroundColor="Transparent"
+                                 Clicked="CategoryClicked"/>
+                    <Label Text="Category"  
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4}"
+                           RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8 }"
+                           TextColor="{StaticResource ButtonTextColor}" 
+                           HorizontalTextAlignment="Center" 
+                           x:Name="lblName"/>
+
+            </RelativeLayout>
+        </Frame>
+</ContentView>

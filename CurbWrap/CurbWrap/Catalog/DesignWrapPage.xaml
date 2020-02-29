@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:img="clr-namespace:CurbWrap.MarkupExtensions;assembly=CurbWrap"
+             x:Class="CurbWrap.Catalog.DesignWrapPage"
+             xmlns:helpers="clr-namespace:CurbWrap.Helpers;assembly=CurbWrap"
+             Title="Customize Image"
+             Style="{StaticResource appPage}">
+    <ScrollView>
+    <RelativeLayout  x:Name="relImage" >
+        <!-- Left, Top, Right, Bottom , OR one value for all OR horiz, vertical -->
+        <StackLayout   Padding="35,20,35,0" >
+            <Label x:Name="wrapName" Text="Plate"  HorizontalOptions="Center"/>
+            <Image Source="White.png"  x:Name="imgWrap" SizeChanged="ImageSizeChanged" IsVisible="True" />
+            <Label Text="Number On Address Plate"  />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Entry Placeholder="123.." Keyboard="Default"  x:Name="AddressNumbers" MaxLength="5" Grid.Row="0" Grid.Column="0" />
+                    <Button Text="Reset Color" Grid.Row="0" Grid.Column="1" Clicked="Btn_Reset_Color" Style="{StaticResource PrimaryButton}"/>
+            </Grid>
+            <Button Text="Change Color Of Address Numbers" Clicked="Button_OnClicked" Style="{StaticResource PrimaryButton}" />
+            <Label Text="Touch the numbers on the curb wrap and drag them into a new position on the wrap. Moving the numbers in a U-shaped pattern will release them so you can move and position them freely." />
+        </StackLayout>        
+         <!--Bounds rctangle x,y,width,height--> 
+        <helpers:DraggableView x:Name="dragView" DragMode="Touch" DragDirection="All" 
+                               RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X,Constant=75,Factor=1}"
+                               RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Constant=50,Factor=1}">
+            <Label x:Name="addrNumbers" Text="{Binding Text}"  
+                    BindingContext="{x:Reference AddressNumbers}"
+                    TextColor="Black"
+                    FontFamily="Arial"/>
+        </helpers:DraggableView>
+        <ImageButton Source ="{img:EmbeddedImage ResourceName=CurbWrap.Images.Back.png}" MinimumHeightRequest="250" WidthRequest="50" BackgroundColor="Transparent"
+            Clicked="NextPrevious_Clicked" x:Name="btnPrev" TabIndex="10"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Constant=55, Factor=0}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Constant=-5, Factor=1 }"
+               />
+
+        <ImageButton Source="{img:EmbeddedImage ResourceName=CurbWrap.Images.Forward.png}"  MinimumHeightRequest="250" WidthRequest="50" BackgroundColor="Transparent"
+            Clicked="NextPrevious_Clicked" x:Name="btnNext" TabIndex="11"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Constant=55, Factor=0}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Constant=-40, Factor=1 }"
+               />
+     </RelativeLayout>
+</ScrollView>
+</ContentPage>
